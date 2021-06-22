@@ -1,0 +1,10 @@
+##############################################################################
+# Default values for role - Might contain placeholders for password - NOT live
+##############################################################################
+---
+
+app_create_user: "{{ os_create_user }}"
+app_group: "{{ os_group }}"            
+app_user: "{{ os_user }}"              
+app_mode: 0644                         
+app_paths: []

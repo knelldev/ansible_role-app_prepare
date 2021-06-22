@@ -1,0 +1,29 @@
+---
+- name: "({{ task_filename }}) user/group block"
+  block:
+  - name: "({{ task_filename }}) create system group"
+    group:
+      name: "{{ app_group }}"
+      system: true
+      state: present
+
+  - name: "({{ task_filename }}) create system user"
+    user:
+      name: "{{ app_user }}"
+      shell: /sbin/nologin
+      append: yes
+      createhome: no
+      comment: "Created by Ansible"
+      group: "{{ app_group }}"
+  when: app_create_user
+  become: yes
+
+- name: "({{ task_filename }}) create app paths"
+  file:
+    path: "{{ item }}"
+    state: directory
+    owner: "{{ app_user }}"
+    group: "{{ app_group }}"
+    mode: "{{ app_mode }}"
+  with_items: "{{ app_paths }}"
+  become: yes
