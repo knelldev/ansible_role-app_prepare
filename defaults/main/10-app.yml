@@ -6,5 +6,5 @@
 app_create_user: "{{ os_create_user }}"
 app_group: "{{ os_group }}"            
 app_user: "{{ os_user }}"              
-app_mode: 0644                         
+app_mode: 0755
 app_paths: []
