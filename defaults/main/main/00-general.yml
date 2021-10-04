@@ -1,0 +1,13 @@
+###############################################################################
+# Default values for role - Might contain placeholders for passwords - NOT live
+###############################################################################
+---
+
+# General configuration (included in every role) 
+storage_base_path: /data    # [path] Base directory where all our created data are stored
+os_home_dir: /home          # [path] Base directory for all homes
+os_timezone: Europe/Berlin  # [timezone] Timezone that should be used for applications 
+
+os_create_user: True        # [bool] Create non-existing users and groups
+
+ansible_debug_enabled: True # [bool] Enable debug output

@@ -1,7 +1,0 @@
-##############################################################################
-# Default values for role - Might contain placeholders for password - NOT live
-##############################################################################
----
-
-# General configuration - best override this for groups and not for single hosts.
-os_create_user: True        # [boolean] Create non existing users and groups
